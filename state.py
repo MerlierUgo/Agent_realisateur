@@ -3,5 +3,9 @@ from typing import Annotated, TypedDict
 
 # 1. Définition de l'état (State)
 class AgentRealState(TypedDict):
-    # add_messages permet d'accumuler l'historique au lieu de l'écraser
+    # Messages de la conversation
     messages: Annotated[list, add_messages]
+    # Contexte récupéré du vectorstore
+    context: str
+    # Action de planification (calendar, etc.)
+    planning_action: str
